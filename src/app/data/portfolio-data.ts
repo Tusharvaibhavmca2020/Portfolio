@@ -63,7 +63,7 @@ export const PORTFOLIO: PortfolioData = {
     'Designing scalable, high-performance systems with C#, ASP.NET Core, Node.js and the SQL/NoSQL stack.',
   location: 'Noida, Uttar Pradesh, India',
   email: 'tusharthakurcipet@gmail.com',
-  resumeFile: 'assets/Tushar_Vaibhav_CV.docx',
+  resumeFile: 'assets/Tushar_Vaibhav_CV.pdf',
   socials: [
     { label: 'GitHub', href: 'https://github.com/tusharvaibhavmca2020', icon: 'github' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/tushar-vaibhav-mca', icon: 'linkedin' },
