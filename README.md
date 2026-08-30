@@ -37,28 +37,17 @@ npm start          # http://localhost:4200
 npm run build      # outputs to dist/portfolio/browser
 ```
 
-## Deploy to GitHub Pages
+## Viewing the built site locally
 
-This repo ships a GitHub Actions workflow (`.github/workflows/deploy.yml`) that
-builds and deploys automatically.
+`npm run build` outputs static files to `dist/portfolio/browser/`. Because the
+app uses an absolute base path, opening `index.html` by double-click won't load
+its assets. To preview the built folder, serve it over HTTP, e.g.:
 
-1. Create a GitHub repo named **`Portfolio`** and push this code to the `main`
-   branch. (The `build:gh` script sets `--base-href /Portfolio/` to match — if
-   you name the repo differently, update that path in `package.json` and the
-   workflow.)
-2. In the repo: **Settings → Pages → Build and deployment → Source →
-   GitHub Actions**.
-3. Push to `main`. The site publishes at
-   `https://tusharvaibhavmca2020.github.io/Portfolio/`.
-
-### Deploying to a user site instead
-
-If you name the repo `tusharvaibhavmca2020.github.io` (served at the domain
-root), change the base href to `/`:
-
-```jsonc
-"build:gh": "ng build --base-href /"
+```bash
+npx http-server dist/portfolio/browser
 ```
+
+For day-to-day editing just use `npm start` (http://localhost:4200).
 
 ## Tech
 
