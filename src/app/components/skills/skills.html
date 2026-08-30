@@ -1,0 +1,23 @@
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">02. // toolbox</span>
+      <h2 class="section-title">Technical Skills</h2>
+    </div>
+
+    <div class="skills__grid">
+      @for (group of data.skills; track group.category; let i = $index) {
+        <div class="skill-group" appReveal [revealDelay]="i * 70">
+          <h3 class="skill-group__title">
+            <span class="skill-group__marker">#</span>{{ group.category }}
+          </h3>
+          <ul class="skill-group__list">
+            @for (item of group.items; track item) {
+              <li class="skill-chip">{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

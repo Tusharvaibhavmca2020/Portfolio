@@ -1,0 +1,31 @@
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">04. // build log</span>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+
+    <div class="projects__grid">
+      @for (proj of data.projects; track proj.name; let i = $index) {
+        <article class="project-card" appReveal [revealDelay]="i * 100">
+          <div class="project-card__top">
+            <svg class="project-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="34" height="34">
+              <path d="M4 7 2 12l2 5"/><path d="m9 4-3 16"/><path d="m15 4 3 16"/><path d="m20 7 2 5-2 5"/>
+            </svg>
+            <span class="project-card__index">0{{ i + 1 }}</span>
+          </div>
+
+          <h3 class="project-card__name">{{ proj.name }}</h3>
+          <p class="project-card__tagline">{{ proj.tagline }}</p>
+          <p class="project-card__desc">{{ proj.description }}</p>
+
+          <ul class="project-card__tags">
+            @for (tag of proj.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+<section id="experience" class="section section--alt">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">03. // career</span>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+
+    <div class="timeline">
+      @for (job of data.experience; track job.company; let i = $index) {
+        <div class="timeline__item" appReveal [revealDelay]="i * 80">
+          <div class="timeline__dot"></div>
+
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <div>
+                <h3 class="timeline__role">{{ job.role }}</h3>
+                <p class="timeline__company">{{ job.company }}</p>
+              </div>
+              <div class="timeline__meta">
+                <span class="timeline__period">{{ job.period }}</span>
+                <span class="timeline__loc">{{ job.location }}</span>
+              </div>
+            </div>
+
+            <div class="timeline__projects">
+              @for (proj of job.projects; track proj.name) {
+                <div class="proj">
+                  <div class="proj__head">
+                    <h4 class="proj__name">{{ proj.name }}</h4>
+                    @if (proj.stack) {
+                      <span class="proj__stack">{{ proj.stack }}</span>
+                    }
+                  </div>
+                  <ul class="proj__points">
+                    @for (point of proj.points; track point) {
+                      <li>{{ point }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

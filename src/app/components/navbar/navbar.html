@@ -1,0 +1,23 @@
+<header class="nav" [class.nav--scrolled]="scrolled()">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__brand" (click)="closeMenu()">
+      <span class="nav__brand-bracket">&lt;</span>TV<span class="nav__brand-bracket">/&gt;</span>
+    </a>
+
+    <button
+      class="nav__toggle"
+      [class.is-open]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__links" [class.is-open]="menuOpen()">
+      @for (link of links; track link.id) {
+        <a [href]="'#' + link.id" (click)="closeMenu()">{{ link.label }}</a>
+      }
+    </nav>
+  </div>
+</header>
