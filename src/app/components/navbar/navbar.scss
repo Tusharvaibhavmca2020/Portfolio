@@ -24,19 +24,7 @@
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.nav__brand {
-  font-family: var(--font-mono);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--text);
-}
-
-.nav__brand-bracket {
-  color: var(--accent);
+  justify-content: flex-end;
 }
 
 .nav__links {
